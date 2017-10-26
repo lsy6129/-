@@ -16,7 +16,8 @@ namespace 吃什么饭
             InitializeComponent();
         }
         string CurDir = "";     //当前程序路径
-
+        string[] eatBreakFast, eatLunch, eatDinner;
+        int goTime = 30;
         /// <summary>
         /// 点抽选按钮
         /// </summary>
@@ -41,11 +42,9 @@ namespace 吃什么饭
                                 eatWhat.Add(foods);
                             }
                         }
-                        string[] eatBreakFast = eatWhat.ToArray();
-                        int BreakFastCount = eatBreakFast.Length;
-                        Random ranBreakFast = new Random();
-                        int breakFastCount = ranBreakFast.Next(BreakFastCount);
-                        Lbl_EatFoods.Text = eatBreakFast[breakFastCount];
+                        eatBreakFast = eatWhat.ToArray();
+                        goTime = 30;
+                        tim_choose.Start();
                         break;
                     case 1:
                         //将文本框的内容循环读取，然后随机抽选一个
@@ -59,11 +58,9 @@ namespace 吃什么饭
                                 eatWhat.Add(foods);
                             }
                         }
-                        string[] eatLunch = eatWhat.ToArray();
-                        int lunchCount = eatLunch.Length;
-                        Random ranLunch = new Random();
-                        int countLunch = ranLunch.Next(lunchCount);
-                        Lbl_EatFoods.Text = eatLunch[countLunch];
+                        eatLunch = eatWhat.ToArray();
+                        goTime = 30;
+                        tim_choose.Start();
                         break;
                     case 2:
                         //将文本框的内容循环读取，然后随机抽选一个
@@ -77,11 +74,9 @@ namespace 吃什么饭
                                 eatWhat.Add(foods);
                             }
                         }
-                        string[] eatDinner = eatWhat.ToArray();
-                        int dinnerCounts = eatDinner.Length;
-                        Random ranDinner = new Random();
-                        int countDinner = ranDinner.Next(dinnerCounts);
-                        Lbl_EatFoods.Text = eatDinner[countDinner];
+                        eatDinner = eatWhat.ToArray();
+                        goTime = 30;
+                        tim_choose.Start();
                         break;
                     default: break;
                 }
@@ -90,6 +85,15 @@ namespace 吃什么饭
             {
                 MessageBox.Show("错误。请检查饭馆管理中该项目下是否有数据。", "提示");
             }
+        }
+
+        //随机筛选
+        private void ChooseEat(string[] foods)
+        {
+            int arrayLength = foods.Length;
+            Random ranEat = new Random();
+            int eatCount = ranEat.Next(arrayLength);
+            Lbl_EatFoods.Text = foods[eatCount];
         }
 
         private void Frm_Main_Load(object sender, EventArgs e)
@@ -278,6 +282,31 @@ namespace 吃什么饭
             else
             {
                 MessageBox.Show("修改文件失败，可以进行抽选，但是关闭程序后将恢复到本次修改之前的数据。", "提示");
+            }
+        }
+
+        private void tim_choose_Tick(object sender, EventArgs e)
+        {
+            
+            switch (cbx_eat.SelectedIndex)
+            {
+                case 0:
+                    ChooseEat(eatBreakFast);
+                    break;
+                case 1:
+                    ChooseEat(eatLunch);
+                    break;
+                case 2:
+                    ChooseEat(eatDinner);
+                    break;
+                default: break;
+            }
+
+            //倒数3秒
+            goTime--;
+            if (goTime == 1)
+            {
+                tim_choose.Stop();
             }
         }
     }

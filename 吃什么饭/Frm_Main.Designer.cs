@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.lbl_title = new System.Windows.Forms.Label();
             this.btn_startcancle = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             this.Tbx_Dinner = new System.Windows.Forms.TextBox();
             this.Tbx_Lunch = new System.Windows.Forms.TextBox();
             this.Tbx_BreakFast = new System.Windows.Forms.TextBox();
+            this.tim_choose = new System.Windows.Forms.Timer(this.components);
             this.Tbc_Main.SuspendLayout();
             this.Tbp_EatWhat.SuspendLayout();
             this.Tbp_Manager.SuspendLayout();
@@ -67,7 +69,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_startcancle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_startcancle.Font = new System.Drawing.Font("微软雅黑 Light", 13F);
-            this.btn_startcancle.Location = new System.Drawing.Point(386, 528);
+            this.btn_startcancle.Location = new System.Drawing.Point(386, 522);
             this.btn_startcancle.Margin = new System.Windows.Forms.Padding(7);
             this.btn_startcancle.Name = "btn_startcancle";
             this.btn_startcancle.Size = new System.Drawing.Size(193, 66);
@@ -131,7 +133,7 @@
             this.Lbl_EatFoods.ForeColor = System.Drawing.Color.OrangeRed;
             this.Lbl_EatFoods.Location = new System.Drawing.Point(6, 195);
             this.Lbl_EatFoods.Name = "Lbl_EatFoods";
-            this.Lbl_EatFoods.Size = new System.Drawing.Size(953, 157);
+            this.Lbl_EatFoods.Size = new System.Drawing.Size(953, 151);
             this.Lbl_EatFoods.TabIndex = 5;
             this.Lbl_EatFoods.Text = "请抽选";
             this.Lbl_EatFoods.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -147,10 +149,10 @@
             this.Tbp_Manager.Controls.Add(this.Tbx_Dinner);
             this.Tbp_Manager.Controls.Add(this.Tbx_Lunch);
             this.Tbp_Manager.Controls.Add(this.Tbx_BreakFast);
-            this.Tbp_Manager.Location = new System.Drawing.Point(4, 37);
+            this.Tbp_Manager.Location = new System.Drawing.Point(4, 31);
             this.Tbp_Manager.Name = "Tbp_Manager";
             this.Tbp_Manager.Padding = new System.Windows.Forms.Padding(3);
-            this.Tbp_Manager.Size = new System.Drawing.Size(964, 594);
+            this.Tbp_Manager.Size = new System.Drawing.Size(964, 600);
             this.Tbp_Manager.TabIndex = 1;
             this.Tbp_Manager.Text = "饭馆管理";
             // 
@@ -232,6 +234,10 @@
             this.Tbx_BreakFast.TabIndex = 0;
             this.Tbx_BreakFast.WordWrap = false;
             // 
+            // tim_choose
+            // 
+            this.tim_choose.Tick += new System.EventHandler(this.tim_choose_Tick);
+            // 
             // Frm_Main
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -272,6 +278,7 @@
         private System.Windows.Forms.TextBox Tbx_Lunch;
         private System.Windows.Forms.Button Btn_Save;
         private System.Windows.Forms.Label Lbl_EatFoods;
+        private System.Windows.Forms.Timer tim_choose;
     }
 }
 
