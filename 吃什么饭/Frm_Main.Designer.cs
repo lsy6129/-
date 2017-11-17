@@ -69,7 +69,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_startcancle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_startcancle.Font = new System.Drawing.Font("微软雅黑 Light", 13F);
-            this.btn_startcancle.Location = new System.Drawing.Point(386, 522);
+            this.btn_startcancle.Location = new System.Drawing.Point(386, 516);
             this.btn_startcancle.Margin = new System.Windows.Forms.Padding(7);
             this.btn_startcancle.Name = "btn_startcancle";
             this.btn_startcancle.Size = new System.Drawing.Size(193, 66);
@@ -133,7 +133,7 @@
             this.Lbl_EatFoods.ForeColor = System.Drawing.Color.OrangeRed;
             this.Lbl_EatFoods.Location = new System.Drawing.Point(6, 195);
             this.Lbl_EatFoods.Name = "Lbl_EatFoods";
-            this.Lbl_EatFoods.Size = new System.Drawing.Size(953, 151);
+            this.Lbl_EatFoods.Size = new System.Drawing.Size(953, 145);
             this.Lbl_EatFoods.TabIndex = 5;
             this.Lbl_EatFoods.Text = "请抽选";
             this.Lbl_EatFoods.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -251,7 +251,7 @@
             this.MinimizeBox = false;
             this.Name = "Frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "吃什么饭 2.1";
+            this.Text = "吃什么饭 2.2";
             this.Load += new System.EventHandler(this.Frm_Main_Load);
             this.Tbc_Main.ResumeLayout(false);
             this.Tbp_EatWhat.ResumeLayout(false);
